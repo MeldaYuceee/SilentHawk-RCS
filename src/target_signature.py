@@ -10,8 +10,9 @@ class TargetSignature:
         delay = 2 * self.distance / c
         shift = int(delay * fs)
 
-        atten = self.rcs  # düşük görünürlük
+        atten = self.rcs  
         echo = np.zeros_like(chirp)
         echo[shift:] = chirp[:-shift] * atten
 
         return echo
+
